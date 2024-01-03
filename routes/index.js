@@ -143,7 +143,7 @@ router.get("/profile/rank/:summonerId", async (req, res) => {
                 if (str == 'GOLD') return "VÀNG";
                 if (str == 'PLATINUM') return "BẠCH KIM";
                 if (str == 'EMERALD') return "LỤC BẢO";
-                if (str == 'DIAMOND ') return "KIM CƯƠNG";
+                if (str == 'DIAMOND') return "KIM CƯƠNG";
                 if (str == 'MASTER') return "CAO THỦ";
                 if (str == 'CHALLENGER') return "THÁCH ĐẤU";
             }
