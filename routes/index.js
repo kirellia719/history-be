@@ -165,7 +165,8 @@ router.get("/profile/rank/:summonerId", async (req, res) => {
 router.get("/profile/histories/:puuid", async (req, res) => {
     try {
         const { puuid } = req.params;
-        let histories = await api.get('sea', `/lol/match/v5/matches/by-puuid/${puuid}/ids?count=5`);
+        const { start = 0, count = 5 } = req.query;
+        let histories = await api.get('sea', `/lol/match/v5/matches/by-puuid/${puuid}/ids?count=${count}&start=${start}`);
         for (let i = 0; i < histories.length; i++) {
             const h = await api.get('sea', `/lol/match/v5/matches/${histories[i]}`);
             const { gameDuration, gameCreation, queueId } = h.info;
